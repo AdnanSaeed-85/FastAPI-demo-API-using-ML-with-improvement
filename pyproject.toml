@@ -1,0 +1,17 @@
+[project]
+name = "fastapi-demo-pro-ml-improvement"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "altair>=6.0.0",
+    "fastapi>=0.135.2",
+    "numpy>=2.4.3",
+    "pandas>=2.3.3",
+    "pydantic>=2.12.5",
+    "requests>=2.33.0",
+    "scikit-learn>=1.8.0",
+    "streamlit>=1.55.0",
+    "uvicorn>=0.42.0",
+]
