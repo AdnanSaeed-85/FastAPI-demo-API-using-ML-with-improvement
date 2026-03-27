@@ -10,6 +10,8 @@ app = FastAPI()
 with open('A:\AI_Projects\Fastapi-demo-pro-ML-improvement\Model\model.pkl', 'rb') as f:
     model = pickle.load(f)
 
+MODEL_VERSION = '1.0.0'
+
 class user_input(BaseModel):
     age: Annotated[int, Field(..., description="User's age", ge=1, le=120)]
     weight: Annotated[float, Field(..., description="User's weight in kg", ge=1)]
@@ -70,6 +72,18 @@ class user_input(BaseModel):
         else:
             return "low"
         
+@app.get('/')
+def home_endpoint():
+    return {'messages': 'Ensurance premium prediction API'}
+
+@app.get('/health')
+def health_check():
+    return {
+        'status': 'OK',
+        'model_version': MODEL_VERSION,
+        'model': model is not None,
+        'database': 'No Database yet'
+    }
 
 @app.post('/predict')
 def predict_it(data: user_input):
