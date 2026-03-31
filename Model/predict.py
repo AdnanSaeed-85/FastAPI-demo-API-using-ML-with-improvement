@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 
-with open('A:\AI_Projects\Fastapi-demo-pro-ML-improvement\Model\model.pkl', 'rb') as f:
+with open('Model/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 MODEL_VERSION = '1.0.0'
