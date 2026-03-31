@@ -1,3 +1,4 @@
+# slim is used for reducing the size of image
 FROM python:3.11.9-slim
 
 WORKDIR /my_app
